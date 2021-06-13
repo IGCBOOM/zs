@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Sandbox;
+using zs.ui;
 
 namespace zs
 {
@@ -14,7 +15,21 @@ namespace zs
 	    public ZSGame()
 	    {
 
-			
+			if ( IsServer )
+			{
+				new ZSHud();
+			}
+
+	    }
+
+	    public override void ClientJoined( Client cl )
+	    {
+
+		    base.ClientJoined( cl );
+		    var player = new ZSBaseController();
+			player.Respawn();
+
+			cl.Pawn = player;
 
 	    }
 

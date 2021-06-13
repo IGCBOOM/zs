@@ -1,0 +1,8 @@
+// 
+// zs.ZSGame : Sandbox.Game 
+// 
+@PointClass = zs : ""
+[
+	targetname(target_source) : "Name" : : "The name that other entities refer to this entity by."
+]
+
