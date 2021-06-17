@@ -8,12 +8,29 @@ using zs.ui;
 
 namespace zs
 {
+
+	enum GameState
+	{
+
+		WaitForPlayers,
+		GamePrepare,
+		InGame,
+		GameEnd,
+		MapVote
+
+	}
+
 	[Library( "zs", Title = "Zombie Survival" )]
 	partial class ZSGame : Game
     {
 
+		[ServerVar]
+		static public GameState gameState { get; private set; }
+
 	    public ZSGame()
 	    {
+
+			gameState = GameState.WaitForPlayers;
 
 			if ( IsServer )
 			{

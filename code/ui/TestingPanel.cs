@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace zs.ui
 {
 
-	class TestingPanel : Panel
+	public class TestingPanel : Panel
 	{
 
 		public Label label;
@@ -19,6 +19,14 @@ namespace zs.ui
 
 			label = Add.Label("test", "string");
 
+		}
+
+		public override void Tick()
+		{
+
+			label.Text = ZSGame.gameState.ToString();
+
+			base.Tick();
 		}
 
 	}
